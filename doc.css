@@ -1,0 +1,241 @@
+:root {
+  --bg: #000000;
+  --surface: #1c1c1e;
+  --surface-2: #2c2c2e;
+  --fg: #ffffff;
+  --fg-dim: #8e8e93;
+  --accent: #ff0033;
+  --link: #4da3ff;
+  --border: #2c2c2e;
+  --max: 760px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Hiragino Sans", "Noto Sans JP", sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ---- Header ---- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.72);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid var(--border);
+}
+.header-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 15px;
+  text-decoration: none;
+  color: var(--fg);
+}
+.brand-mark {
+  width: 26px;
+  height: 26px;
+  border-radius: 7px;
+  background: var(--accent);
+  display: grid;
+  place-items: center;
+}
+.brand-mark svg { width: 16px; height: 16px; fill: #fff; }
+
+.header-nav { display: flex; gap: 20px; font-size: 14px; }
+.header-nav a {
+  color: var(--fg-dim);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+.header-nav a:hover { color: var(--fg); }
+
+/* ---- Document ---- */
+.doc {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 56px 24px 80px;
+}
+
+.doc h1 {
+  font-size: clamp(28px, 5vw, 40px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+
+.updated {
+  color: var(--fg-dim);
+  font-size: 14px;
+  margin-bottom: 32px;
+}
+
+.doc section {
+  padding-top: 40px;
+  margin-top: 40px;
+  border-top: 1px solid var(--border);
+}
+.doc section:first-of-type {
+  border-top: none;
+  margin-top: 24px;
+  padding-top: 0;
+}
+
+.doc h2 {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-bottom: 16px;
+}
+
+.doc h3 {
+  font-size: 17px;
+  font-weight: 600;
+  margin-top: 28px;
+  margin-bottom: 10px;
+}
+
+.doc p {
+  margin-bottom: 14px;
+  color: #d8d8dc;
+}
+
+.doc ul, .doc ol {
+  margin: 0 0 16px 22px;
+  color: #d8d8dc;
+}
+.doc li { margin-bottom: 6px; }
+
+.doc a { color: var(--link); }
+
+.doc code {
+  background: var(--surface);
+  padding: 2px 7px;
+  border-radius: 5px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.88em;
+  color: var(--fg);
+}
+
+/* ---- 目次 ---- */
+.toc {
+  background: var(--surface);
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin-bottom: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.toc a {
+  color: var(--link);
+  text-decoration: none;
+  font-size: 14px;
+}
+.toc a:hover { text-decoration: underline; }
+
+/* ---- 補足ボックス ---- */
+.note {
+  background: var(--surface);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 12px 12px 0;
+  padding: 18px 22px;
+  margin: 20px 0;
+}
+.note strong {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 15px;
+}
+.note p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--fg-dim);
+}
+
+/* ---- 要約ボックス ---- */
+.summary-box {
+  background: var(--surface);
+  border-radius: 14px;
+  padding: 24px;
+}
+.summary-box p {
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--fg);
+  margin-bottom: 12px;
+}
+.summary-box ul {
+  margin: 0 0 0 20px;
+  color: var(--fg-dim);
+  font-size: 14px;
+}
+
+/* ---- 定義リスト ---- */
+.def-list {
+  background: var(--surface);
+  border-radius: 14px;
+  padding: 8px 24px;
+  margin: 16px 0;
+}
+.def-list dt {
+  font-weight: 600;
+  font-size: 15px;
+  margin-top: 16px;
+}
+.def-list dd {
+  color: var(--fg-dim);
+  font-size: 14px;
+  margin: 4px 0 16px;
+}
+
+/* ---- Footer ---- */
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 40px 0 56px;
+  font-size: 13px;
+  color: var(--fg-dim);
+}
+.footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-links { display: flex; gap: 20px; }
+.footer-links a {
+  color: var(--fg-dim);
+  text-decoration: none;
+}
+.footer-links a:hover { color: var(--fg); }
+
+@media (max-width: 640px) {
+  .header-nav { gap: 14px; font-size: 13px; }
+  .doc { padding: 40px 20px 64px; }
+}

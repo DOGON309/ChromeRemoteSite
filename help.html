@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ヘルプ — Chrome Remote</title>
+<link rel="icon" type="image/png" href="assets/icon-192.png">
+<link rel="stylesheet" href="doc.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">
+        <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+      </span>
+      Chrome Remote
+    </a>
+    <nav class="header-nav">
+      <a href="index.html">ホーム</a>
+      <a href="privacy.html">プライバシー</a>
+    </nav>
+  </div>
+</header>
+
+<main class="doc">
+  <h1>ヘルプ</h1>
+
+  <nav class="toc">
+    <a href="#install">インストール手順</a>
+    <a href="#pairing">スマートフォンとの接続</a>
+    <a href="#tray">タスクトレイの使い方</a>
+    <a href="#trouble">うまく動かないとき</a>
+    <a href="#uninstall">アンインストール</a>
+  </nav>
+
+  <section id="install">
+    <h2>インストール手順</h2>
+
+    <h3>1. Chrome 拡張機能を追加する</h3>
+    <p>
+      Chrome ウェブストアから Chrome Remote の拡張機能を追加します。
+      追加すると、ツールバーに拡張機能のアイコンが表示されます。
+    </p>
+
+    <h3>2. Chrome Remote 本体をインストールする</h3>
+    <p>
+      <a href="index.html">ホーム</a>からダウンロードした
+      <code>ChromeRemoteSetup.exe</code> を実行します。
+      インストール先はユーザーフォルダー内のため、管理者権限は必要ありません。
+    </p>
+    <p>
+      インストール中に「Windows 起動時に開始する」というオプションが表示されます。
+      有効にしておくと、PC を起動するたびに手動で立ち上げる必要がなくなります。
+    </p>
+
+    <div class="note">
+      <strong>Windows の警告が表示される場合</strong>
+      <p>
+        「WindowsによってPCが保護されました」と表示されることがあります。
+        これは配布元の署名がないプログラムに対する標準的な警告です。
+        続行するには「詳細情報」をクリックし、「実行」を選択してください。
+      </p>
+    </div>
+
+    <h3>3. Chrome を再起動する</h3>
+    <p>
+      インストール後、Chrome を一度終了して起動し直します。
+      これにより拡張機能が Chrome Remote を認識できるようになります。
+    </p>
+  </section>
+
+  <section id="pairing">
+    <h2>スマートフォンとの接続</h2>
+
+    <p>
+      PC 側で YouTube を開いた状態で、ツールバーの Chrome Remote アイコンをクリックします。
+      ポップアップに接続状態、アクセス用の URL、QR コードが表示されます。
+    </p>
+
+    <h3>QR コードで接続する</h3>
+    <ol>
+      <li>ポップアップの「ペアリング開始」をクリックします</li>
+      <li>6 桁のペアリングコードが表示されます</li>
+      <li>スマートフォンのカメラで QR コードを読み取ります</li>
+      <li>開いた画面にペアリングコードを入力します</li>
+    </ol>
+    <p>
+      接続に成功すると、以降は同じスマートフォンから自動的にログインされます。
+      毎回コードを入力する必要はありません。
+    </p>
+
+    <h3>URL を直接入力して接続する</h3>
+    <p>
+      QR コードを読み取れない場合は、ポップアップに表示されている URL
+      （<code>http://192.168.x.x:8080/</code> のような形式）を
+      スマートフォンのブラウザに直接入力しても接続できます。
+    </p>
+
+    <h3>ホーム画面に追加する</h3>
+    <p>
+      スマートフォンのブラウザメニューから「ホーム画面に追加」を選ぶと、
+      アプリのように起動できるようになります。
+    </p>
+  </section>
+
+  <section id="tray">
+    <h2>タスクトレイの使い方</h2>
+
+    <p>
+      Chrome Remote は起動中、タスクトレイ（画面右下の通知領域）に常駐します。
+      アイコンを右クリックすると、次の操作ができます。
+    </p>
+
+    <dl class="def-list">
+      <dt>接続状態</dt>
+      <dd>Chrome 拡張機能や YouTube との接続状況が表示されます。クリックはできません。</dd>
+
+      <dt>ダッシュボードを開く</dt>
+      <dd>PC のブラウザでリモコン画面を開きます。動作確認に使えます。</dd>
+
+      <dt>Chrome 拡張機能を開く</dt>
+      <dd>Chrome の拡張機能ページを開きます。</dd>
+
+      <dt>ログフォルダーを開く</dt>
+      <dd>動作ログが保存されているフォルダーを開きます。不具合の調査に使います。</dd>
+
+      <dt>設定フォルダーを開く</dt>
+      <dd>設定ファイルとデータベースが保存されているフォルダーを開きます。</dd>
+
+      <dt>再起動</dt>
+      <dd>Chrome Remote を再起動します。</dd>
+
+      <dt>終了</dt>
+      <dd>Chrome Remote を終了します。終了するとスマートフォンからの操作はできなくなります。</dd>
+    </dl>
+  </section>
+
+  <section id="trouble">
+    <h2>うまく動かないとき</h2>
+
+    <h3>拡張機能に「Chrome Remote が見つかりません」と表示される</h3>
+    <p>
+      PC 側の Chrome Remote がインストールされていないか、起動していない可能性があります。
+    </p>
+    <ul>
+      <li>インストールがまだの場合は、<a href="index.html">ホーム</a>からダウンロードしてください</li>
+      <li>インストール済みの場合は、タスクトレイにアイコンがあるか確認してください</li>
+      <li>アイコンがない場合は、スタートメニューから Chrome Remote を起動してください</li>
+      <li>インストール直後は、Chrome の再起動が必要です</li>
+    </ul>
+
+    <h3>スマートフォンから接続できない</h3>
+    <ul>
+      <li>PC とスマートフォンが同じ Wi-Fi に接続されているか確認してください</li>
+      <li>
+        ゲストネットワークや、端末間の通信が制限されたネットワークでは接続できません。
+        通常の Wi-Fi に接続し直してください
+      </li>
+      <li>
+        Windows のファイアウォールがブロックしている場合は、
+        初回接続時に表示される許可ダイアログで「許可」を選択してください
+      </li>
+      <li>
+        ポップアップに表示されている URL が正しいか確認してください。
+        PC の IP アドレスが変わっている場合があります
+      </li>
+    </ul>
+
+    <h3>「YouTube を開いてください」と表示される</h3>
+    <p>
+      Chrome で YouTube の動画ページを開いてください。
+      トップページや検索結果を表示している場合、操作対象の動画がないためこの表示になります。
+    </p>
+
+    <h3>操作しても反応しない</h3>
+    <ul>
+      <li>Chrome の拡張機能ページで、Chrome Remote が有効になっているか確認してください</li>
+      <li>タスクトレイから「再起動」を実行してみてください</li>
+      <li>それでも解決しない場合は、Chrome と Chrome Remote の両方を再起動してください</li>
+    </ul>
+
+    <h3>ポート番号が変わっている</h3>
+    <p>
+      既定のポート（8080）が他のアプリケーションで使われている場合、
+      Chrome Remote は自動的に別のポートで起動します。
+      拡張機能のポップアップには実際に使用しているポートが表示されるため、
+      そちらの URL または QR コードを使用してください。
+    </p>
+  </section>
+
+  <section id="uninstall">
+    <h2>アンインストール</h2>
+
+    <p>
+      Windows の「設定」→「アプリ」から Chrome Remote を選び、
+      アンインストールを実行してください。
+    </p>
+    <p>
+      アンインストール後も、ペアリング情報などの設定は保持されます。
+      再度インストールした場合、以前の設定がそのまま使えます。
+    </p>
+    <p>
+      Chrome 拡張機能は自動では削除されません。
+      不要な場合は Chrome の拡張機能ページから削除してください。
+    </p>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <span>Chrome Remote 1.0.0</span>
+    <nav class="footer-links">
+      <a href="index.html">ホーム</a>
+      <a href="privacy.html">プライバシー</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
