@@ -140,42 +140,50 @@ body {
   padding: 20px 0 88px;
   display: flex;
   justify-content: center;
-  gap: 28px;
+  align-items: flex-start;
+  gap: 40px;
   flex-wrap: wrap;
 }
-.shot {
-  text-align: center;
-}
+.shot { text-align: center; }
+
 .shot-frame {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 24px;
   padding: 10px;
   display: inline-block;
+  line-height: 0;
 }
 .shot-frame img {
   display: block;
   border-radius: 16px;
-  max-width: 100%;
+  object-fit: cover;
+  object-position: top;
 }
+
+/* スマホ画面: 縦長のため高さで制限する */
+.shot-frame.phone img {
+  width: 240px;
+  height: 480px;
+}
+
+/* ポップアップ: 実寸に近いサイズで表示する */
+.shot-frame.popup img {
+  width: 240px;
+  height: auto;
+}
+
 .shot-caption {
-  margin-top: 12px;
+  margin-top: 14px;
   font-size: 13px;
   color: var(--fg-dim);
+  line-height: 1.6;
 }
-.shot-placeholder {
-  width: 260px;
-  height: 520px;
-  border-radius: 16px;
-  background: linear-gradient(160deg, #1c1c1e, #101012);
-  display: grid;
-  place-items: center;
-  color: #5a5a5f;
-  font-size: 13px;
-}
-.shot-placeholder.wide {
-  width: 320px;
-  height: 380px;
+
+@media (max-width: 640px) {
+  .shots { gap: 32px; }
+  .shot-frame.phone img { width: 200px; height: 400px; }
+  .shot-frame.popup img { width: 200px; }
 }
 
 /* ---- Sections ---- */
@@ -375,7 +383,7 @@ details p {
       </p>
       <div class="cta-group">
         <a class="btn-primary"
-           href="https://github.com/DOGON309/chrome-remote-site/releases/latest/download/ChromeRemoteSetup.exe">
+           href="https://github.com/DOGON309/ChromeRemoteSite/releases/download/v1.0.0/ChromeRemoteSetup.exe">
           <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
           Windows 版をダウンロード
         </a>
@@ -387,14 +395,14 @@ details p {
   <div class="wrap">
     <div class="shots">
       <div class="shot">
-        <div class="shot-frame">
-          <div class="shot-placeholder">スマートフォンの操作画面</div>
+        <div class="shot-frame phone">
+          <img src="assets/screenshot-phone.png" alt="スマートフォンの操作画面">
         </div>
         <p class="shot-caption">手元で再生・音量・シークを操作</p>
       </div>
       <div class="shot">
-        <div class="shot-frame">
-          <div class="shot-placeholder wide">拡張機能のポップアップ</div>
+        <div class="shot-frame popup">
+          <img src="assets/screenshot-extension.png" alt="拡張機能のポップアップ">
         </div>
         <p class="shot-caption">QR コードを読み取るだけで接続</p>
       </div>
